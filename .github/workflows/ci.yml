@@ -1,4 +1,4 @@
-name: "dropwizard-ci-pipeline"
+name: "test"
 
 on:
   push:
@@ -7,9 +7,8 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: self-hosted-lab
+    runs-on: self-hosted
     steps:
-      - uses: rtCamp/action-cleanup@master
       - uses: actions/checkout@v1
 
       - name: Setup Java
@@ -29,7 +28,7 @@ jobs:
 
   deploy:
     needs: build-and-test
-    runs-on: self-hosted-lab
+    runs-on: self-hosted
     steps:
       - uses: rtCamp/action-cleanup@master
       - uses: actions/checkout@master
