@@ -1,4 +1,4 @@
-name: "test"
+name: "Lab-402-CD"
 
 on:
   push:
